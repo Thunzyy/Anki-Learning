@@ -1,0 +1,100 @@
+
+.card {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #1a1a2e;
+    color: #eee;
+    padding: 24px;
+    text-align: center;
+}
+.word {
+    font-size: 36px;
+    font-weight: 700;
+    color: #f0a500;
+    margin-bottom: 8px;
+}
+.phonetic {
+    font-size: 20px;
+    color: #a8a8b3;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+hr {
+    border: none;
+    border-top: 1px solid #333;
+    margin: 16px 0;
+}
+.french {
+    font-size: 26px;
+    color: #4ecca3;
+    font-weight: 600;
+    margin: 8px 0 16px;
+}
+.category {
+    font-size: 14px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.rank {
+    font-size: 12px;
+    color: #555;
+    margin-top: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.example {
+    background: #16213e;
+    border-left: 3px solid #f0a500;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin: 16px 0;
+    text-align: left;
+}
+.example-sentence {
+    font-size: 18px;
+    color: #e0e0e0;
+    margin-bottom: 6px;
+    line-height: 1.4;
+}
+.example-translation {
+    font-size: 15px;
+    color: #8888aa;
+    font-style: italic;
+    line-height: 1.4;
+}
+.hint-container {
+    margin-top: 8px;
+}
+.hint-container a {
+    display: inline-block;
+    background: #16213e;
+    color: #4ecca3;
+    border: 1px solid #4ecca3;
+    border-radius: 6px;
+    padding: 6px 16px;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.hint-container a:hover {
+    background: #4ecca3;
+    color: #1a1a2e;
+}
+.cloze-label {
+    font-size: 13px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+.cloze-sentence {
+    font-size: 24px;
+    color: #e0e0e0;
+    line-height: 1.5;
+}
+.cloze-sentence .cloze-blank {
+    color: #e94560;
+    font-weight: 700;
+    border-bottom: 2px dashed #e94560;
+    padding: 0 4px;
+}

@@ -1,0 +1,107 @@
+# Frequency strategies for Learning.
+# Curated lists (NGSL, TSL, Brazilian, Spanish) are declared below.
+# Spoken OpenSubtitles lists (NGSL equivalent) auto-load from data/frequency/<lang>.csv.
+# To add a curated list:
+#   1. Put a CSV in data/<lang>/<list>.csv (one word per row, most common first).
+#   2. Copy a block below, set id / language / source / columns.
+#   3. Restart the API. The strategy appears in New deck for that language.
+# To add a spoken list: python scripts/fetch_frequency_lists.py --lang it
+# Columns map CSV headers → card fields. sizes are optional (defaults apply).
+
+defaults:
+  sizes: [500, 1000, 2000, 3000, 4000, 5000]
+  features:
+    phonetic: true
+    phrase: false
+    audio: false
+    image: false
+
+strategies:
+  - id: ngsl
+    language: en
+    language_label: Anglais
+    label: NGSL — General Service List
+    source: data/english/ngsl.csv
+    columns:
+      word: English
+      ipa: Phonetic
+      french: French
+    import:
+      - {id: legacy-en-ngsl, name: NGSL — General Service List}
+
+  - id: ngsl-vocab
+    language: en
+    language_label: Anglais
+    label: NGSL — Vocabulary Only
+    source: data/english/ngsl_vocab.csv
+    columns:
+      word: English
+      ipa: Phonetic
+      french: French
+    import:
+      - {id: legacy-en-ngsl-vocab, name: NGSL — Vocabulary Only}
+
+  - id: tsl
+    language: en
+    language_label: Anglais
+    label: TSL — TOEIC Service List
+    source: data/english/tsl.csv
+    columns:
+      word: English
+      ipa: Phonetic
+      french: French
+    import:
+      - {id: legacy-en-tsl, name: TSL — TOEIC Service List}
+
+  - id: nawl
+    language: en
+    language_label: Anglais
+    label: NAWL — Academic Word List
+    source: data/english/nawl.csv
+    columns:
+      word: English
+      ipa: Phonetic
+      french: French
+    import:
+      - {id: legacy-en-nawl, name: NAWL — Academic Word List}
+
+  - id: pt-br
+    language: pt
+    language_label: Portugais (Brésil)
+    label: Fréquence brésilienne
+    source: data/portuguese/brazilian.csv
+    audio_dir: data/portuguese/audio
+    columns:
+      word: Portuguese
+      ipa: Pronunciation
+      french: French
+      category: Category
+      phrase: Phrase
+      phrase_fr: Traduction
+      audio: Audio
+    features:
+      phrase: true
+      audio: true
+    import:
+      - {id: legacy-pt-1000, name: Portugais brésilien 1000, limit: 1000}
+      - {id: legacy-pt-2000, name: Portugais brésilien 2000, limit: 2000}
+      - {id: legacy-pt-3000, name: Portugais brésilien 3000, limit: 3000}
+      - {id: legacy-pt-4000, name: Portugais brésilien 4000, limit: 4000}
+      - {id: legacy-pt-full, name: Portugais brésilien — vocabulaire}
+
+  - id: es
+    language: es
+    language_label: Espagnol
+    label: Fréquence espagnole
+    source: data/spanish/spanish.csv
+    columns:
+      word: Spanish
+      ipa: Pronunciation
+      french: French
+      category: Category
+    import:
+      - {id: legacy-es-1000, name: Espagnol 1000, limit: 1000}
+      - {id: legacy-es-2000, name: Espagnol 2000, limit: 2000}
+      - {id: legacy-es-3000, name: Espagnol 3000, limit: 3000}
+      - {id: legacy-es-4000, name: Espagnol 4000, limit: 4000}
+      - {id: legacy-es-full, name: Espagnol — vocabulaire}

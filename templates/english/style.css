@@ -1,0 +1,57 @@
+
+        .card {
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #1a1a2e;
+            color: #eee;
+            padding: 24px;
+            text-align: center;
+        }
+        .word {
+            font-size: 36px;
+            font-weight: 700;
+            color: #e94560;
+            margin-bottom: 8px;
+        }
+        .phonetic {
+            font-size: 20px;
+            color: #a8a8b3;
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+        hr {
+            border: none;
+            border-top: 1px solid #333;
+            margin: 16px 0;
+        }
+        .french {
+            font-size: 26px;
+            color: #4ecca3;
+            font-weight: 600;
+            margin: 8px 0 16px;
+        }
+        .hint-container {
+            margin-top: 12px;
+        }
+        .hint-container a {
+            display: inline-block;
+            background: #16213e;
+            color: #53c7f0;
+            border: 1px solid #53c7f0;
+            border-radius: 6px;
+            padding: 8px 20px;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .hint-container a:hover {
+            background: #53c7f0;
+            color: #1a1a2e;
+        }
+        .rank {
+            font-size: 12px;
+            color: #555;
+            margin-top: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        

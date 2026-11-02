@@ -1,0 +1,95 @@
+# Pedagogical CEFR grammar skeleton for Learning.
+# Public, language-agnostic inventory. Examples are generated later.
+levels: [a1, a2, b1, b2, c1]
+rules:
+  # A1
+  - {id: present-simple, level: a1, category: tenses, title_fr: Présent simple, explain_fr: Action habituelle ou vérité générale.}
+  - {id: present-be, level: a1, category: tenses, title_fr: Être au présent, explain_fr: Identifier, décrire ou situer avec être.}
+  - {id: articles-def-indef, level: a1, category: determiners, title_fr: Articles définis et indéfinis, explain_fr: Distinguer ce qui est déjà connu de ce qui est nouveau.}
+  - {id: personal-pronouns, level: a1, category: pronouns, title_fr: Pronoms personnels, explain_fr: Remplacer le nom sujet pour éviter de le répéter.}
+  - {id: possessive-adj, level: a1, category: determiners, title_fr: Adjectifs possessifs, explain_fr: Marquer à qui appartient une chose.}
+  - {id: demonstratives, level: a1, category: determiners, title_fr: Démonstratifs, explain_fr: Montrer ce qui est proche ou loin.}
+  - {id: negation, level: a1, category: negation, title_fr: Négation, explain_fr: Dire qu’une chose n’est pas vraie.}
+  - {id: yes-no-questions, level: a1, category: questions, title_fr: Questions oui ou non, explain_fr: Demander une confirmation simple.}
+  - {id: wh-questions, level: a1, category: questions, title_fr: Questions ouvertes, explain_fr: Demander qui, quoi, où, quand ou pourquoi.}
+  - {id: there-is, level: a1, category: syntax, title_fr: Il y a, explain_fr: Introduire l’existence d’une chose ou d’une personne.}
+  - {id: can-ability, level: a1, category: modals, title_fr: Pouvoir capacité, explain_fr: Exprimer ce que l’on sait faire.}
+  - {id: countable-intro, level: a1, category: nouns, title_fr: Comptable et non comptable, explain_fr: Savoir ce que l’on peut compter.}
+  - {id: plural-nouns, level: a1, category: nouns, title_fr: Pluriel des noms, explain_fr: Parler de plusieurs choses.}
+  - {id: adjective-place, level: a1, category: syntax, title_fr: Place de l’adjectif, explain_fr: Qualifier un nom selon l’ordre de la langue.}
+  - {id: prepositions-place, level: a1, category: syntax, title_fr: Prépositions de lieu, explain_fr: Situer quelqu’un ou quelque chose dans l’espace.}
+  - {id: prepositions-time-basic, level: a1, category: syntax, title_fr: Prépositions de temps, explain_fr: Situer un événement dans le temps.}
+  - {id: imperatives, level: a1, category: tenses, title_fr: Impératif, explain_fr: Donner un ordre, une instruction ou un conseil.}
+  - {id: like-want, level: a1, category: tenses, title_fr: Aimer et vouloir, explain_fr: Exprimer un goût ou un désir.}
+  - {id: present-progressive, level: a1, category: tenses, title_fr: Présent progressif, explain_fr: Parler de ce qui se passe maintenant.}
+
+  # A2
+  - {id: past-simple, level: a2, category: tenses, title_fr: Passé de narration, explain_fr: Raconter un fait terminé dans le passé.}
+  - {id: past-be, level: a2, category: tenses, title_fr: Être au passé, explain_fr: Décrire un état passé avec être.}
+  - {id: future-going-to, level: a2, category: tenses, title_fr: Futur proche, explain_fr: Parler d’un projet déjà décidé.}
+  - {id: future-will, level: a2, category: tenses, title_fr: Futur simple, explain_fr: Annoncer une prédiction ou une décision spontanée.}
+  - {id: comparatives, level: a2, category: syntax, title_fr: Comparatif, explain_fr: Comparer deux personnes ou deux choses.}
+  - {id: superlatives, level: a2, category: syntax, title_fr: Superlatif, explain_fr: Dire le plus ou le moins dans un groupe.}
+  - {id: some-any, level: a2, category: determiners, title_fr: Some et any, explain_fr: Parler d’une quantité indéfinie, surtout en question ou en négation.}
+  - {id: quantifiers, level: a2, category: determiners, title_fr: Quantifieurs, explain_fr: Dire beaucoup, peu, trop selon le type de nom.}
+  - {id: adverbs-frequency, level: a2, category: syntax, title_fr: Adverbes de fréquence, explain_fr: Dire à quelle fréquence une action arrive.}
+  - {id: must-have-to, level: a2, category: modals, title_fr: Obligation, explain_fr: Dire ce qui est obligatoire.}
+  - {id: should-advice, level: a2, category: modals, title_fr: Conseil, explain_fr: Recommander une action sans l’imposer.}
+  - {id: object-pronouns, level: a2, category: pronouns, title_fr: Pronoms objets, explain_fr: Remplacer le complément pour éviter de le répéter.}
+  - {id: reflexive, level: a2, category: pronouns, title_fr: Pronoms réfléchis, explain_fr: Dire que l’action revient sur le sujet.}
+  - {id: infinitive-purpose, level: a2, category: syntax, title_fr: Infinitif de but, explain_fr: Expliquer pourquoi on fait une action.}
+  - {id: time-clauses-when, level: a2, category: connectors, title_fr: Quand et le temps, explain_fr: Relier deux actions dans le temps.}
+  - {id: cause-result, level: a2, category: connectors, title_fr: Cause et conséquence, explain_fr: Dire pourquoi et ce qui s’ensuit.}
+  - {id: present-perfect-intro, level: a2, category: tenses, title_fr: Passé composé introduction, explain_fr: Parler d’une expérience ou d’un résultat encore lié au présent.}
+  - {id: word-order, level: a2, category: syntax, title_fr: Ordre des mots, explain_fr: Placer sujet, verbe et compléments dans le bon ordre.}
+
+  # B1
+  - {id: present-perfect-vs-past, level: b1, category: tenses, title_fr: Passé composé contre passé simple, explain_fr: Choisir entre un passé encore lié au présent et un passé révolu.}
+  - {id: past-continuous, level: b1, category: tenses, title_fr: Imparfait et passé continu, explain_fr: Décrire une action en cours dans le passé.}
+  - {id: past-perfect, level: b1, category: tenses, title_fr: Plus-que-parfait, explain_fr: Situer une action avant une autre action passée.}
+  - {id: first-conditional, level: b1, category: tenses, title_fr: Conditionnel 1, explain_fr: Parler d’une condition réelle et de son résultat probable.}
+  - {id: relative-clauses, level: b1, category: syntax, title_fr: Relatives, explain_fr: Ajouter une information sur un nom déjà nommé.}
+  - {id: passive-present, level: b1, category: voice, title_fr: Passif présent, explain_fr: Mettre l’objet au premier plan au présent.}
+  - {id: reported-statements, level: b1, category: syntax, title_fr: Discours rapporté, explain_fr: Rapporter les paroles de quelqu’un.}
+  - {id: gerund-vs-inf, level: b1, category: syntax, title_fr: Gérondif et infinitif, explain_fr: Choisir la forme du verbe après un autre verbe.}
+  - {id: used-to, level: b1, category: tenses, title_fr: Habitude passée, explain_fr: Parler d’une habitude qui n’existe plus.}
+  - {id: might-may, level: b1, category: modals, title_fr: Possibilité, explain_fr: Dire qu’une chose est possible sans être sûre.}
+  - {id: concession, level: b1, category: connectors, title_fr: Concession, explain_fr: Opposer deux idées sans les annuler.}
+  - {id: intensity-so-such, level: b1, category: syntax, title_fr: Intensité, explain_fr: Renforcer un adjectif ou un nom.}
+  - {id: question-tags, level: b1, category: questions, title_fr: Questions-tags, explain_fr: Chercher l’accord de l’interlocuteur.}
+  - {id: phrasal-intro, level: b1, category: syntax, title_fr: Locutions verbales, explain_fr: Combiner un verbe et une particule pour un nouveau sens.}
+  - {id: adjectives-ed-ing, level: b1, category: syntax, title_fr: Adjectifs en -ed et -ing, explain_fr: Distinguer le sentiment ressenti de la cause.}
+  - {id: future-time-clauses, level: b1, category: tenses, title_fr: Subordonnées de futur, explain_fr: Parler du futur après when, if ou as soon as.}
+
+  # B2
+  - {id: second-conditional, level: b2, category: tenses, title_fr: Conditionnel 2, explain_fr: Imaginer une situation irréelle au présent.}
+  - {id: third-conditional, level: b2, category: tenses, title_fr: Conditionnel 3, explain_fr: Imaginer un passé différent et son résultat.}
+  - {id: mixed-conditionals, level: b2, category: tenses, title_fr: Conditionnels mixtes, explain_fr: Relier un passé irréel à un présent différent.}
+  - {id: passive-all, level: b2, category: voice, title_fr: Passif tous temps, explain_fr: Employer le passif à tous les temps utiles.}
+  - {id: reported-questions, level: b2, category: syntax, title_fr: Questions rapportées, explain_fr: Rapporter une question sans inversion.}
+  - {id: wish-if-only, level: b2, category: tenses, title_fr: Wish et si seulement, explain_fr: Exprimer un regret ou un souhait irréel.}
+  - {id: inversion-neg, level: b2, category: syntax, title_fr: Inversion après négation, explain_fr: Inverser sujet et verbe après une amorce négative.}
+  - {id: cleft-it, level: b2, category: syntax, title_fr: Phrases clivées, explain_fr: Mettre en relief un élément de la phrase.}
+  - {id: participle-clauses, level: b2, category: syntax, title_fr: Propositions participiales, explain_fr: Condenser une relative ou une cause avec un participe.}
+  - {id: future-perfect, level: b2, category: tenses, title_fr: Futur antérieur, explain_fr: Dire qu’une action sera déjà finie à un moment futur.}
+  - {id: modal-deduction, level: b2, category: modals, title_fr: Modaux de déduction, explain_fr: Déduire ce qui est certain, probable ou impossible.}
+  - {id: relative-reduced, level: b2, category: syntax, title_fr: Relatives réduites, explain_fr: Alléger une relative en enlevant le pronom et le verbe être.}
+  - {id: connectors-contrast, level: b2, category: connectors, title_fr: Connecteurs avancés, explain_fr: Nuancer l’opposition, l’ajout et la concession.}
+  - {id: causative, level: b2, category: syntax, title_fr: Causatif, explain_fr: Dire qu’on fait faire une action par quelqu’un d’autre.}
+  - {id: narrative-tenses, level: b2, category: tenses, title_fr: Temps du récit, explain_fr: Combiner les temps pour raconter une histoire claire.}
+
+  # C1
+  - {id: inversion-cond, level: c1, category: syntax, title_fr: Inversion conditionnelle, explain_fr: Exprimer une condition sans if, par inversion.}
+  - {id: inversion-style, level: c1, category: syntax, title_fr: Inversion stylistique, explain_fr: Inverser pour un effet formel ou littéraire.}
+  - {id: conditionals-advanced, level: c1, category: tenses, title_fr: Conditionnels avancés, explain_fr: Mélanger registres et temps pour des hypothèses fines.}
+  - {id: nominalisation, level: c1, category: syntax, title_fr: Nominalisation, explain_fr: Transformer un verbe ou un adjectif en nom pour un style plus dense.}
+  - {id: discourse-markers, level: c1, category: discourse, title_fr: Marqueurs de discours, explain_fr: Guider l’auditeur d’une idée à la suivante.}
+  - {id: hedging, level: c1, category: discourse, title_fr: Atténuation, explain_fr: Adoucir une affirmation trop catégorique.}
+  - {id: emphasis, level: c1, category: syntax, title_fr: Emphase, explain_fr: Insister sur un mot ou une idée.}
+  - {id: subjunctive, level: c1, category: tenses, title_fr: Subjonctif et irréel, explain_fr: Marquer le doute, le souhait ou l’irréel.}
+  - {id: complex-passives, level: c1, category: voice, title_fr: Passifs complexes, explain_fr: Employer des passifs à plusieurs verbes ou à l’infinitif.}
+  - {id: ellipsis, level: c1, category: syntax, title_fr: Ellipse et substitution, explain_fr: Éviter de répéter un groupe déjà compris.}
+  - {id: register-formal, level: c1, category: discourse, title_fr: Registre formel, explain_fr: Adapter le vocabulaire et la syntaxe au contexte soutenu.}
+  - {id: collocation-patterns, level: c1, category: syntax, title_fr: Schémas de collocation, explain_fr: Associer les mots comme le font les locuteurs natifs.}
+  - {id: cleft-what, level: c1, category: syntax, title_fr: Clivées en what, explain_fr: Mettre en relief une information avec what ou c’est… que.}
+  - {id: participle-advanced, level: c1, category: syntax, title_fr: Participes avancés, explain_fr: Utiliser des participes pour des rapports logiques denses.}

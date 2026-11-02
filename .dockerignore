@@ -1,0 +1,24 @@
+# Only application sources and build inputs enter the image context.
+**
+!Dockerfile
+!studio/
+!studio/api/
+!studio/api/requirements.txt
+!studio/api/app/
+!studio/api/app/**
+!studio/web/
+!studio/web/package.json
+!studio/web/package-lock.json
+!studio/web/index.html
+!studio/web/tsconfig.json
+!studio/web/vite.config.ts
+!studio/web/src/
+!studio/web/src/**
+!data/
+!data/**
+**/__pycache__/
+**/*.pyc
+**/.env
+**/.env.*
+**/*.backup
+**/*.log

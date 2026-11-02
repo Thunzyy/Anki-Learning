@@ -1,0 +1,127 @@
+english:
+  fields: [English, Phonetic, Definition, French, Rank]
+  templates_dir: templates/english
+  versions:
+    basic:
+      templates:
+        - name: "English → French"
+          front: en_fr_front.html
+          back: en_fr_back.html
+  decks:
+    - name: TSL - TOEIC Service List
+      source: data/english/tsl.csv
+      base_file: English/TSL_TOEIC_Service_List
+      model_id: 1607392320
+      deck_id: 2001
+    - name: NGSL - General Service List
+      source: data/english/ngsl.csv
+      base_file: English/NGSL_General_Service_List
+      model_id: 1607392321
+      deck_id: 2002
+    - name: NGSL - Vocabulary Only
+      source: data/english/ngsl_vocab.csv
+      base_file: English/NGSL_Vocabulary_Only
+      model_id: 1607392323
+      deck_id: 2003
+    - name: NAWL - Academic Word List
+      source: data/english/nawl.csv
+      base_file: English/NAWL_Academic_Word_List
+      model_id: 1607392322
+      deck_id: 2004
+
+portuguese:
+  templates_dir: templates/portuguese
+  source: data/portuguese/brazilian.csv
+  versions:
+    basic:
+      fields: [Portuguese, Pronunciation, French, Category, Rank, Audio]
+      audio_dir: data/portuguese/audio
+      templates:
+        - name: "Portugais → Français"
+          front: pt_fr_front.html
+          back: pt_fr_back_basic.html
+        - name: "Français → Portugais"
+          front: fr_pt_front.html
+          back: fr_pt_back_basic.html
+    complete:
+      fields: [Portuguese, Pronunciation, French, Category, Rank, Phrase, Traduction, Cloze, Audio, Cloze_Audio]
+      audio_dir: data/portuguese/audio
+      computed_fields:
+        Cloze:
+          type: cloze
+          sentence_field: Phrase
+          word_field: Portuguese
+      templates:
+        - name: "Portugais → Français"
+          front: pt_fr_front.html
+          back: pt_fr_back.html
+        - name: "Français → Portugais"
+          front: fr_pt_front.html
+          back: fr_pt_back.html
+        - name: "Cloze"
+          front: cloze_front.html
+          back: cloze_back.html
+  decks:
+    - name: Brazilian Portuguese 1000
+      base_file: Portuguese/Brazilian_Portuguese_1000
+      limit: 1000
+      model_id: 1607393330
+      deck_id: 3001
+    - name: Brazilian Portuguese 2000
+      base_file: Portuguese/Brazilian_Portuguese_2000
+      limit: 2000
+      model_id: 1607394330
+      deck_id: 3002
+    - name: Brazilian Portuguese 3000
+      base_file: Portuguese/Brazilian_Portuguese_3000
+      limit: 3000
+      model_id: 1607395330
+      deck_id: 3003
+    - name: Brazilian Portuguese 4000
+      base_file: Portuguese/Brazilian_Portuguese_4000
+      limit: 4000
+      model_id: 1607396330
+      deck_id: 3004
+    - name: Brazilian Portuguese Vocabulary
+      base_file: Portuguese/Brazilian_Portuguese_5000
+      model_id: 1607392330
+      deck_id: 3005
+
+spanish:
+  templates_dir: templates/spanish
+  source: data/spanish/spanish.csv
+  versions:
+    basic:
+      fields: [Spanish, Pronunciation, French, Category, Rank]
+      templates:
+        - name: "Spanish → French"
+          front: es_fr_front.html
+          back: es_fr_back.html
+        - name: "French → Spanish"
+          front: fr_es_front.html
+          back: fr_es_back.html
+  decks:
+    - name: Spanish 1000
+      base_file: Spanish/Spanish_1000
+      limit: 1000
+      model_id: 1607393340
+      deck_id: 4001
+    - name: Spanish 2000
+      base_file: Spanish/Spanish_2000
+      limit: 2000
+      model_id: 1607394340
+      deck_id: 4002
+    - name: Spanish 3000
+      base_file: Spanish/Spanish_3000
+      limit: 3000
+      model_id: 1607395340
+      deck_id: 4003
+    - name: Spanish 4000
+      base_file: Spanish/Spanish_4000
+      limit: 4000
+      model_id: 1607396340
+      deck_id: 4004
+    - name: Spanish Vocabulary
+      base_file: Spanish/Spanish_5000
+      model_id: 1607392340
+      deck_id: 4005

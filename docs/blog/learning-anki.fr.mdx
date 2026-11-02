@@ -1,0 +1,140 @@
+---
+title: "Anki Learning : des listes de mots aux cartes Anki"
+slug: learning-creer-decks-anki
+excerpt: "Une application locale pour transformer des listes de vocabulaire en cartes Anki enrichies, relire ses contenus et exporter ses decks."
+category: projets
+tags: [Anki, langues, Python, React, Docker]
+read_time: "6 min"
+cover_image: https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659334337.png
+published: false
+featured: false
+---
+
+# Anki Learning : des listes de mots aux cartes Anki
+
+Utiliser Anki pour réviser du vocabulaire est une chose. Préparer les cartes que l’on souhaite vraiment apprendre en est une autre. Il faut choisir les mots, vérifier les traductions, trouver une phrase utile, ajouter la prononciation et, parfois, chercher une illustration. Répété sur plusieurs centaines de cartes, ce travail prend vite beaucoup de place.
+
+Anki Learning rassemble ces étapes dans une application locale. L’idée est de disposer d’un atelier de préparation : on choisit les contenus à apprendre, on complète les cartes, on les relit, puis on les exporte vers Anki pour les réviser.
+
+![La bibliothèque de decks Anki Learning](https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659334337.png)
+
+## Du générateur à l’atelier
+
+Le dépôt conserve sa première chaîne de génération : des CSV, des modèles HTML et un script Python qui produit les fichiers Anki. L’application ajoute un atelier entre ces données et le fichier final, pour corriger une traduction ou remplacer une image sans reprendre toute la liste.
+
+Cette approche rejoint celle de mes autres projets : [AirQR](https://github.com/Thunzyy/AirQR) rassemble les étapes d’un transfert de fichiers ; [PwnPilot](https://github.com/Thunzyy/PwnPilot), celles d’un travail de pentest. Ici, l’objectif est de réunir les opérations de préparation d’un deck.
+
+## Partir des mots qui nous intéressent
+
+Un deck peut commencer par une liste personnelle : des mots rencontrés dans un livre, une série, un cours ou une conversation. Il peut aussi partir d’une liste déjà disponible dans l’application.
+
+Anki Learning embarque 41 listes de fréquence multilingues ainsi que des ressources anglaises comme NGSL, TSL et NAWL. Les listes de fréquence sont principalement tirées de sous-titres de films et de séries. Elles donnent un point de départ pour explorer le vocabulaire courant ; les listes anglaises permettent de travailler d’autres besoins, notamment académiques ou liés au TOEIC.
+
+À la création, on choisit la langue à apprendre, la langue de traduction et le nombre de mots. On peut commencer avec une petite sélection, examiner le résultat, puis préparer un deck plus conséquent. Des stratégies grammaticales sont également disponibles.
+
+![Choix de la langue et des contenus d’un deck](https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659346768.png)
+
+## Choisir ce qui figure sur chaque carte
+
+Une traduction seule peut suffire pour certains mots. Pour d’autres, une phrase ou un enregistrement aide à comprendre l’usage et la prononciation.
+
+Anki Learning permet d’activer les éléments souhaités : phonétique, phrase d’exemple, audio et illustration. Les fournisseurs de texte peuvent compléter les champs manquants. Les images proviennent de banques comme Wikimedia, Unsplash et Pexels, ou peuvent être générées avec Grok Imagine et le CLI Codex. La synthèse vocale utilise Edge TTS.
+
+Le résultat reste modifiable. Une traduction ambiguë, une phrase trop générale ou une illustration peu adaptée peut être corrigée dans l’atelier avant de rejoindre Anki.
+
+| Recto | Verso |
+| --- | --- |
+| ![Exemple de recto](https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659362726.png) | ![Exemple de verso](https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659372697.png) |
+
+## Des illustrations liées au contexte
+
+La bibliothèque d’images conserve leur origine, leur contexte et leur historique d’affectation. Une illustration peut être réutilisée entre langues lorsque le sens et la scène correspondent. Les remplacements disposent d’un aperçu et de sauvegardes ; l’import manuel reste possible. Une image liée à un mot isolé ne suffit pas à garantir le bon sens.
+
+## Un atelier pour compléter et relire
+
+L’atelier présente l’état du deck : ce qui est déjà rempli, ce qui manque et les erreurs à reprendre. La recherche aide à retrouver un mot sans parcourir toutes les cartes.
+
+Le remplissage est progressif. Une première exécution peut ajouter le texte ; une suivante peut compléter les médias encore absents. Cela permet de travailler par étapes et de reprendre un deck sans devoir tout recréer.
+
+![L’atelier de préparation et ses indicateurs](https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659386785.png)
+
+Avant l’export, des contrôles vérifient la présence et la structure des contenus attendus. Certaines erreurs bloquent la sortie du deck, tandis que d’autres points restent des avertissements. Tous les mots n’ont d’ailleurs pas besoin d’une image : les mots grammaticaux sont volontairement traités différemment.
+
+Ces contrôles ne remplacent pas une relecture linguistique. Une phrase peut être correctement structurée et pourtant manquer de naturel. L’intérêt de l’atelier est justement de garder cette étape de vérification à portée de main.
+
+## Préparer dans Anki Learning, réviser dans Anki
+
+Une fois le deck prêt, Anki Learning peut produire un fichier `.apkg` avec les médias intégrés et des cartes dans les deux sens. Ce fichier s’importe ensuite dans Anki.
+
+Pour les personnes qui utilisent Anki sur le même ordinateur, AnkiConnect permet aussi un envoi direct. Les decks sont rangés dans des groupes par langue. L’export CSV reste disponible pour retravailler les données dans un autre outil, et les fichiers Anki peuvent être publiés comme pièces jointes d’une release GitHub.
+
+Anki Learning s’occupe ainsi de la préparation des contenus. Anki conserve son rôle pour les séances de révision et la répétition espacée.
+
+Les actions globales permettent d’envoyer toutes les langues dans Anki ou de publier les decks sur GitHub, un deck après l’autre. Les échecs restent visibles et peuvent être repris sans recommencer les réussites. Il faut garder l’onglet ouvert pendant le lot. L’envoi vers Anki Desktop ne déclenche pas la synchronisation AnkiWeb.
+
+## Sous le capot
+
+| Élément | Choix | Rôle |
+| --- | --- | --- |
+| Interface | React, TypeScript, Vite | Bibliothèque, atelier et réglages |
+| API | Python, FastAPI | Préparation, validation et export |
+| Decks | Fichiers JSON locaux | Cartes, contenus et progression |
+| Images | SQLite et fichiers médias | Origine, contexte et historique |
+| Export Anki | genanki | Paquets avec médias |
+
+Les données vivent dans `studio/data/`, ou dans le dossier choisi avec `LEARNING_DATA_DIR`. Les CSV initiaux ne remplacent pas une sauvegarde des corrections faites ensuite dans l’application.
+
+## Des données locales, des services au choix
+
+Les decks, réglages, images et fichiers audio sont stockés sur la machine qui exécute Anki Learning. L’interface reste accessible dans le navigateur, mais les fonctions de traduction, de génération d’images et de synthèse vocale peuvent faire appel à des services externes.
+
+Les fournisseurs se configurent dans les réglages. En installation locale, Anki Learning peut utiliser une clé API ou certaines sessions CLI compatibles déjà ouvertes sur la machine. Les droits, coûts éventuels et quotas dépendent du service utilisé.
+
+L’édition manuelle reste possible. On peut donc préparer et corriger ses cartes même sans lancer une génération, en choisissant à quel moment solliciter les services en ligne.
+
+## Essayer Anki Learning
+
+Le [dépôt GitHub](https://github.com/Thunzyy/Anki-Learning) contient le code et le [guide d’installation](https://github.com/Thunzyy/Anki-Learning/blob/main/docs/installation.md). Pour réviser directement dans Anki, téléchargez un [deck avec ses médias](https://github.com/Thunzyy/Anki-Learning/releases/tag/decks-2026-10-18). Pour créer vos propres decks dans l’application, importez la [bibliothèque d’illustrations](https://github.com/Thunzyy/Anki-Learning/releases/tag/image-library-2026-11-02).
+
+### Avec les scripts de démarrage
+
+Après avoir installé Python 3.10 ou plus récent et Node.js 22.18 ou plus récent, récupérez le projet :
+
+```sh
+git clone https://github.com/Thunzyy/Anki-Learning.git
+cd Anki-Learning
+```
+
+Sur Windows, ouvrez `start.cmd` ou lancez depuis PowerShell :
+
+```powershell
+.\start.ps1
+```
+
+Sur macOS ou Linux :
+
+```sh
+sh start.sh
+```
+
+Le premier lancement prépare l’environnement Python, installe les dépendances et construit l’interface. Les lancements suivants réutilisent cette installation. Le navigateur s’ouvre sur `http://127.0.0.1:8700` lorsque l’application est prête ; le terminal reste ouvert pendant son utilisation.
+
+### Avec Docker
+
+Si Docker et Compose sont déjà installés, une commande suffit depuis le dossier du projet :
+
+```sh
+docker compose up -d --build --wait
+```
+
+L’application est ensuite accessible à la même adresse. Un volume conserve ses données entre les redémarrages du conteneur. Cette installation est indépendante des decks créés avec le lancement local.
+
+Dans Docker, utilisez des clés API pour les services externes : les sessions CLI de l’ordinateur ne sont pas reprises automatiquement. L’export `.apkg` permet de transférer facilement les decks vers Anki Desktop.
+
+## Commencer avec un petit deck
+
+Pour un premier essai, une liste courte suffit : choisissez une langue, ajoutez quelques mots, configurez les contenus utiles, puis relisez le résultat. Exportez ensuite le deck dans Anki pour vérifier que le format vous convient.
+
+Cette boucle permet d’ajuster les cartes à sa manière d’apprendre avant d’en préparer des centaines. Anki Learning fournit l’atelier ; le choix des mots et la qualité de la relecture restent au centre du travail.
+
+Les captures illustrent le fonctionnement de l’atelier ; elles ne constituent pas une validation linguistique de tous les decks.

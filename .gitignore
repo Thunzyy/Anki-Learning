@@ -1,0 +1,93 @@
+# Generated decks (built from source CSV or exported from Learning)
+dist/
+tmp/
+
+# Old published .apkg folders (replaced by Learning)
+English/
+Portuguese/
+Spanish/
+TOEIC_1260_Essential_Words.apkg
+
+# Backup files
+*.backup
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Node / Vite
+studio/web/node_modules/
+studio/web/dist/
+studio/web/vite-*.log
+studio/web/tsconfig.tsbuildinfo
+
+# Learning local state (decks, settings, media, exports, cache)
+studio/data/
+
+# Environment
+.env
+.env.*
+
+# Temp files from the old build process
+chunk_*
+trans_*
+es_chunk_*
+es_trans_*
+untranslated*
+wiktionary_*
+es_*_raw*
+br_*
+
+# Scratch outputs from image/AI experiments
+*-contact-sheet.jpg
+*-contact-sheet.png
+
+# Local AI assistant files and process notes
+.claude/
+.codex/
+.cursor/
+.agents/
+.aider*
+AGENTS.md
+CLAUDE.md
+CLAUDE.local.md
+GEMINI.md
+.github/copilot-instructions.md
+docs/superpowers/
+
+# Local development and test artifacts
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage/
+*.tsbuildinfo
+*.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Credentials and exported application state
+*.pem
+*.key
+*.p12
+*.pfx
+auth.json
+credentials.json
+settings.local.json
+*.apkg
+*.colpkg
+
+# Local planning metadata
+.github/hermes-agile.json
+.planning/
+_bmad/
+_bmad-output/

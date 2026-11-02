@@ -1,0 +1,140 @@
+---
+title: "Anki Learning: from word lists to Anki cards"
+slug: learning-build-anki-decks
+excerpt: "A local application for turning vocabulary lists into enriched Anki cards, reviewing their content, and exporting your decks."
+category: projects
+tags: [Anki, languages, Python, React, Docker]
+read_time: "6 min"
+cover_image: https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659334337.png
+published: false
+featured: false
+---
+
+# Anki Learning: from word lists to Anki cards
+
+Using Anki to review vocabulary is one thing. Preparing the cards you actually want to learn is another. You need to choose words, check translations, find useful example sentences, add pronunciation, and sometimes look for an illustration. Repeated across hundreds of cards, that preparation quickly becomes a substantial part of the work.
+
+Anki Learning brings these steps together in a local application. It provides a workshop for preparing cards: choose what to learn, fill in the content, review it, and export it to Anki for your study sessions.
+
+![The Anki Learning deck library](https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659334337.png)
+
+## From generator to workshop
+
+The repository retains its original workflow: CSV files, HTML templates and a Python script that builds Anki packages. The application adds a workshop between those inputs and the final file, so a translation or illustration can be corrected without preparing the entire list again.
+
+This follows an approach shared by my other projects: [AirQR](https://github.com/Thunzyy/AirQR) brings together the steps of a file transfer; [PwnPilot](https://github.com/Thunzyy/PwnPilot), those of pentest work. Here, the goal is to bring deck preparation into one workspace.
+
+## Start with words that matter to you
+
+A deck can begin with your own list: words from a book, a TV series, a class, or a conversation. It can also start with one of the lists already included in the application.
+
+Anki Learning includes 41 multilingual frequency lists alongside English resources such as NGSL, TSL, and NAWL. The frequency lists mainly come from film and TV subtitles. They provide a starting point for exploring common vocabulary, while the English resources cover other needs, including academic vocabulary and TOEIC preparation.
+
+When creating a deck, choose the language you want to learn, the translation language, and the number of words. You can start with a small selection, inspect the results, and then prepare a larger deck. Grammar strategies are also available.
+
+![Choosing a deck's language and content](https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659346768.png)
+
+## Choose what goes on each card
+
+A translation may be enough for some words. For others, an example sentence or an audio recording helps clarify usage and pronunciation.
+
+Anki Learning lets you enable the elements you need: phonetics, an example sentence, audio, and an illustration. Text providers can fill in missing fields. Images can come from Wikimedia, Unsplash, or Pexels, or be generated with Grok Imagine and the Codex CLI. Speech synthesis uses Edge TTS.
+
+The results remain editable. You can correct an ambiguous translation, an overly generic sentence, or an unsuitable image in the workshop before sending the card to Anki.
+
+| Front | Back |
+| --- | --- |
+| ![Example card front](https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659362726.png) | ![Example card back](https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659372697.png) |
+
+## Illustrations with context
+
+The image library records origin, context and assignment history. An illustration can be reused across languages when its meaning and scene match. Replacements have previews and backups; manual import remains available. Attaching an image to an isolated word does not guarantee the intended meaning.
+
+## A workshop for completing and reviewing cards
+
+The workshop shows the state of your deck: what is already filled in, what is missing, and which errors need attention. Search helps you find a word without scrolling through every card.
+
+Enrichment is incremental. One run may add the text; another can fill in media that is still missing. This lets you work in stages and return to a deck without starting over.
+
+![The workshop and its completion indicators](https://zhpwtdtwpzldtyrobkjk.supabase.co/storage/v1/object/public/media/uploads/blog-1790659386785.png)
+
+Before export, checks validate the presence and structure of the expected content. Some errors block export, while others remain warnings. Not every word needs an illustration: function words are deliberately handled differently.
+
+These checks do not replace a language review. A sentence can be structurally correct and still sound unnatural. The workshop keeps that review step close to the editing process.
+
+## Prepare in Anki Learning, review in Anki
+
+Once a deck is ready, Anki Learning can produce an `.apkg` file with bundled media and cards in both directions. You can then import that file into Anki.
+
+If you use Anki on the same computer, AnkiConnect also supports direct delivery. Decks are organized into language groups. CSV export remains available for working with the data in another tool, and Anki packages can be uploaded as GitHub release assets.
+
+Anki Learning handles content preparation. Anki remains responsible for study sessions and spaced repetition.
+
+Global actions send every language to Anki or publish decks to GitHub, one deck at a time. Failures remain visible and can be retried without repeating successful decks. Keep the browser tab open during a batch. Sending decks to Anki Desktop does not trigger AnkiWeb synchronization.
+
+## Under the hood
+
+| Component | Choice | Role |
+| --- | --- | --- |
+| Interface | React, TypeScript, Vite | Library, workshop and settings |
+| API | Python, FastAPI | Preparation, validation and export |
+| Decks | Local JSON files | Cards, content and progress |
+| Images | SQLite and media files | Origin, context and history |
+| Anki export | genanki | Packages with media |
+
+Data lives in `studio/data/`, or the directory selected through `LEARNING_DATA_DIR`. Initial CSV files are not backups of corrections made later in the application.
+
+## Local data, with a choice of services
+
+Decks, settings, images, and audio files are stored on the machine running Anki Learning. You access the interface through a browser, while translation, image generation, and speech synthesis may call external services.
+
+Providers are configured in Settings. With a local installation, Anki Learning can use an API key or certain compatible CLI sessions already active on your machine. Access rights, potential costs, and quotas depend on the service you use.
+
+Manual editing remains available. You can prepare and correct cards without running a generation request, choosing when to use online services.
+
+## Try Anki Learning
+
+Get the source and [installation guide](https://github.com/Thunzyy/Anki-Learning/blob/main/docs/installation.md) from the [GitHub repository](https://github.com/Thunzyy/Anki-Learning). To study in Anki, download a [deck with its media](https://github.com/Thunzyy/Anki-Learning/releases/tag/decks-2026-10-18). To create new decks in the application, import the [illustration library](https://github.com/Thunzyy/Anki-Learning/releases/tag/image-library-2026-11-02).
+
+### Using the startup scripts
+
+Install Python 3.10 or newer and Node.js 22.18 or newer, then clone the project:
+
+```sh
+git clone https://github.com/Thunzyy/Anki-Learning.git
+cd Anki-Learning
+```
+
+On Windows, open `start.cmd` or run this in PowerShell:
+
+```powershell
+.\start.ps1
+```
+
+On macOS or Linux:
+
+```sh
+sh start.sh
+```
+
+The first run prepares the Python environment, installs dependencies, and builds the interface. Later runs reuse that installation. Your browser opens at `http://127.0.0.1:8700` when the application is ready; keep the terminal open while using it.
+
+### Using Docker
+
+If Docker and Compose are already installed, run this command from the project directory:
+
+```sh
+docker compose up -d --build --wait
+```
+
+The application is then available at the same address. A volume preserves its data between container restarts. This installation is separate from decks created with the local launcher.
+
+Inside Docker, use API keys for external services: your computer's CLI sessions are not picked up automatically. Exporting an `.apkg` is a straightforward way to transfer decks to Anki Desktop.
+
+## Begin with a small deck
+
+A short list is enough for a first attempt: choose a language, add a few words, select the content you need, and review the results. Export the deck to Anki to check whether the format works for you.
+
+This lets you adjust the cards to the way you study before preparing hundreds of them. Anki Learning provides the workspace; choosing useful words and reviewing the content remain central to the process.
+
+Screenshots illustrate the workshop; they do not certify the linguistic quality of every deck.
