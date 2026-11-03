@@ -2,7 +2,7 @@
 
 Turn a vocabulary list into an Anki deck you can read, hear, and review in both directions. Anki Learning gives you a local workspace to choose your words, edit their translations and examples, and check each card before it reaches Anki.
 
-[Installation guide](docs/installation.md)
+[Installation guide](docs/installation.md) · [Architecture](docs/ARCHITECTURE.md)
 
 ![Deck library organized by language](docs/images/home.png)
 
